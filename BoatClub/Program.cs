@@ -17,7 +17,7 @@ namespace BoatClub
             startView.showStartMenu();
             StartController startController = new StartController(startView);
 
-            
+            startController.showSelectedMenu();
         }
     }
 }

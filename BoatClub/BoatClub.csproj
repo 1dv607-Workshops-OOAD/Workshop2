@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\ListMemberView.cs" />
     <Compile Include="Controller\RegisterMember.cs" />
     <Compile Include="Controller\StartController.cs" />
     <Compile Include="Model\Member.cs" />

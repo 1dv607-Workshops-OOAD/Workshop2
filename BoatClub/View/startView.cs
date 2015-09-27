@@ -28,12 +28,13 @@ namespace BoatClub.View
 
         public MenuChoice GetMenuChoice()
         {
-            char c = System.Console.ReadKey().KeyChar;
-            if (c == 1)
+            
+            char menuChoice = System.Console.ReadKey().KeyChar;
+            if (menuChoice == '1')
             {
                 return MenuChoice.AddMember;
             }
-            if (c == 2)
+            if (menuChoice == '2')
             {
                 return MenuChoice.ListMembers;
             }

@@ -11,9 +11,23 @@ namespace BoatClub.Controller
     {
         private StartView startView;
 
-        public bool showSelectedMenu()
+        public void showSelectedMenu()
         {
-            throw new NotImplementedException();
+
+            //view.Console.Event e;
+
+            StartView.MenuChoice menuChoice = this.startView.GetMenuChoice();
+            if (menuChoice == StartView.MenuChoice.AddMember)
+            {
+                AddMemberView addMemberView = new AddMemberView();
+                addMemberView.showAddMemberView();
+                //this.startView.showAddMemberView();
+            }
+            if (menuChoice == StartView.MenuChoice.ListMembers)
+            {
+                ListMemberView listMemberView = new ListMemberView();
+
+            }
         }
 
         public StartController(StartView startView)
