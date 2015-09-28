@@ -21,6 +21,7 @@ namespace BoatClub.Controller
             {
                 AddMemberView addMemberView = new AddMemberView();
                 addMemberView.showAddMemberView();
+                AddMemberController addMemberController = new AddMemberController(addMemberView);
                 //this.startView.showAddMemberView();
             }
             if (menuChoice == StartView.MenuChoice.ListMembers)

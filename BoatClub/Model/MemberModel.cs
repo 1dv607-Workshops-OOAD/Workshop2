@@ -6,18 +6,22 @@ using System.Threading.Tasks;
 
 namespace BoatClub.Model
 {
-    class Member
+    class MemberModel
     {
-        private int socialSecurityNumber;
+        private string socialSecurityNumber;
         private string name;
-        private int memberId = 1;
         //private int numberOfBoats;
 
-        public Member(int socialSecurityNumber, string name)
+        public MemberModel(string name, string socialSecurityNumber)
         {
             this.name = name;
             this.socialSecurityNumber = socialSecurityNumber;
-            
+            writeSomething();
+        }
+
+        public void writeSomething()
+        {
+            Console.Write(this.name + this.socialSecurityNumber);
         }
 
     }

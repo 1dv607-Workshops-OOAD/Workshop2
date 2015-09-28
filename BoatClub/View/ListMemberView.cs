@@ -2,16 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BoatClub.Controller
 {
-    class RegisterMember
+    class ListMemberView
     {
-        
-        public RegisterMember()
-        {
-
-        }
     }
 }

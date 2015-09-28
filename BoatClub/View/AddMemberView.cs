@@ -8,19 +8,28 @@ namespace BoatClub.View
 {
     class AddMemberView
     {
+        private string name;
+        private string socialSecurityNumber;
         public void showAddMemberView()
         {
             Console.Clear();
             Console.WriteLine("Lägg till medlem");
             Console.Write("Ange namn: ");
-            string name = Console.ReadLine();
+            this.name = Console.ReadLine();
             Console.Write("Ange personnummer: ");
-            string socialSecurityNumber = Console.ReadLine();
-            Console.Write("Ange medlemsnummer: ");
-            string memberId = Console.ReadLine();
-            //Returnera detta och skicka til controllern för att skapa ny medlem i model.
+            this.socialSecurityNumber = Console.ReadLine();
         }
-        
+
+        public string getName()
+        {
+            return this.name;
+        }
+
+        public string getSocialSecurityNumber()
+        {
+            return this.socialSecurityNumber;
+        }
+
         public AddMemberView()
         {
             //showAddMemberView();
