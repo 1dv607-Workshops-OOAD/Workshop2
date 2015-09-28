@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\MemberIDModel.cs" />
+    <Compile Include="Model\MembersModel.cs" />
     <Compile Include="View\ListMemberView.cs" />
     <Compile Include="Controller\AddMemberController.cs" />
     <Compile Include="Controller\StartController.cs" />
@@ -54,6 +56,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="AppData\memberID.txt" />
+    <Content Include="AppData\members.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

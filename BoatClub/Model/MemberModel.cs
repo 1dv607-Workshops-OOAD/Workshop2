@@ -10,12 +10,16 @@ namespace BoatClub.Model
     {
         private string socialSecurityNumber;
         private string name;
+        private int memberId;
+        //private MemberIDModel memberIdModel;
         //private int numberOfBoats;
 
         public MemberModel(string name, string socialSecurityNumber)
         {
             this.name = name;
             this.socialSecurityNumber = socialSecurityNumber;
+            MemberIDModel memberIdModel = new MemberIDModel();
+            memberId = memberIdModel.generateMemberId();
             writeSomething();
         }
 
