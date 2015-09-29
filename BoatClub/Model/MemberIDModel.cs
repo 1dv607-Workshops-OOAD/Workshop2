@@ -9,23 +9,35 @@ namespace BoatClub.Model
 {
     class MemberIDModel
     {
+        private string path = "../../AppData/memberID.txt";
+        private int count;
 
         public int generateMemberId(){
-            //Skapa textfil med räknare av antal tillagda medlemmar
-            //instruction https://msdn.microsoft.com/en-us/library/8bh11f1k.aspx
-            string path = "../../AppData/memberID.txt";
-
             using (StreamReader reader = new StreamReader(path))
             {
-                string line;
-                while ((line = reader.ReadLine()) != null){
-                    //count = 1 
-                    Console.WriteLine(line);
-                    //Fortsätt här Skriv till fil...
+                string line = reader.ReadLine();
+                if (new FileInfo(path).Length == 0)
+                {
+                    this.count = 1;
                 }
+                else
+                {
+                    this.count = int.Parse(line);
+                    this.count++;
+                }
+                
             }
-            return 1;
+            writeToFile();
+            return this.count;
+        }
 
+        //Save number of generated memberId's to file
+        public void writeToFile()
+        {
+            using (StreamWriter write = new StreamWriter(path, false))
+            {
+                write.Write(this.count);
+            }
         }
         
     }
