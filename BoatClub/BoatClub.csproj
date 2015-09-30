@@ -42,20 +42,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\MemberIDModel.cs" />
-    <Compile Include="Model\MembersModel.cs" />
+    <Compile Include="Model\MemberDALModel.cs" />
     <Compile Include="View\ListMemberView.cs" />
     <Compile Include="Controller\AddMemberController.cs" />
-    <Compile Include="Controller\StartController.cs" />
+    <Compile Include="Controller\StartMenuController.cs" />
     <Compile Include="Model\MemberModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\AddMemberView.cs" />
-    <Compile Include="View\StartView.cs" />
+    <Compile Include="View\StartMenuView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AppData\Members\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="AppData\memberID.txt" />
     <Content Include="AppData\members.txt" />

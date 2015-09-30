@@ -7,5 +7,6 @@ namespace BoatClub.Controller
 {
     class ListMemberView
     {
+
     }
 }

@@ -7,31 +7,37 @@ using System.Threading.Tasks;
 
 namespace BoatClub.Controller
 {
-    class StartController
+    class StartMenuController
     {
-        private StartView startView;
+        private StartMenuView startView;
 
         public void showSelectedMenu()
         {
 
-            //view.Console.Event e;
+            //SKAPA ETT MEMBERDAL-OBJEKT OCH SKICKA MED TILL ALLA CONTROLLERS
 
-            StartView.MenuChoice menuChoice = this.startView.GetMenuChoice();
-            if (menuChoice == StartView.MenuChoice.AddMember)
+            StartMenuView.MenuChoice menuChoice = this.startView.GetMenuChoice();
+            if (menuChoice == StartMenuView.MenuChoice.AddMember)
             {
                 AddMemberView addMemberView = new AddMemberView();
                 addMemberView.showAddMemberView();
                 AddMemberController addMemberController = new AddMemberController(addMemberView);
                 //this.startView.showAddMemberView();
             }
-            if (menuChoice == StartView.MenuChoice.ListMembers)
+            if (menuChoice == StartMenuView.MenuChoice.CompactListMembers)
             {
                 ListMemberView listMemberView = new ListMemberView();
+                //show compact list
+            }
 
+            if (menuChoice == StartMenuView.MenuChoice.VerboseListMembers)
+            {
+                ListMemberView listMemberView = new ListMemberView();
+                //show verbose list
             }
         }
 
-        public StartController(StartView startView)
+        public StartMenuController(StartMenuView startView)
         {
             this.startView = startView;
         }

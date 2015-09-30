@@ -10,12 +10,15 @@ namespace BoatClub
 {
     class Program
     {
+        //Frågor:
+        //1. Spara båtar och medlemmar i samma fil?
+        //2. Ska vi spara båtar och medlemmar via controllern eller modellen?
         static void Main(string[] args)
         {
             //Register member
-            StartView startView = new StartView();
+            StartMenuView startView = new StartMenuView();
             startView.showStartMenu();
-            StartController startController = new StartController(startView);
+            StartMenuController startController = new StartMenuController(startView);
 
             startController.showSelectedMenu();
         }

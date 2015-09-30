@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace BoatClub.View
 {
-    class StartView
+    class StartMenuView
     {
         public enum MenuChoice {
             AddMember,
-            ListMembers,
+            CompactListMembers,
+            VerboseListMembers,
             None
         }
 
@@ -20,10 +21,7 @@ namespace BoatClub.View
             Console.WriteLine("Välj nedan vad du vill göra.");
             Console.WriteLine("Tryck 1 för att lägga till medlem.");
             Console.WriteLine("Tryck 2 för att visa medlemslista");
-
-            //Handle new member
-
-            //Handle boat
+            Console.WriteLine("Tryck 3 för att visa utökad medlemslista");
         }
 
         public MenuChoice GetMenuChoice()
@@ -36,13 +34,17 @@ namespace BoatClub.View
             }
             if (menuChoice == '2')
             {
-                return MenuChoice.ListMembers;
+                return MenuChoice.CompactListMembers;
+            }
+            if (menuChoice == '3')
+            {
+                return MenuChoice.VerboseListMembers;
             }
 
             return MenuChoice.None;
         }
 
-        public StartView()
+        public StartMenuView()
         {
             
         }
