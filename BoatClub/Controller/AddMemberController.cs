@@ -12,10 +12,9 @@ namespace BoatClub.Controller
     {
         private AddMemberView addMemberView;
         
-        public AddMemberController(AddMemberView addMemberView)
+        public AddMemberController(AddMemberView addMemberView, MemberDALModel memberDAL)
         {
             this.addMemberView = addMemberView;
-            MemberDALModel memberDAL = new MemberDALModel();
             MemberModel member = new MemberModel(addMemberView.getName(), addMemberView.getSocialSecurityNumber());
             memberDAL.saveMember(member);
         }

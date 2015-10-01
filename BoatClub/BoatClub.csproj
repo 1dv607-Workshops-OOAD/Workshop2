@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ListMemberController.cs" />
     <Compile Include="Model\MemberIDModel.cs" />
     <Compile Include="Model\MemberDALModel.cs" />
     <Compile Include="View\ListMemberView.cs" />
@@ -54,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\Members\" />
