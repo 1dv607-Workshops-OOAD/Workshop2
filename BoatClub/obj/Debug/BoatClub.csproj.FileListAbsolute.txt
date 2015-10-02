@@ -3,4 +3,3 @@ C:\Users\Caroline Forslund\Desktop\OOAD\BoatClub\bin\Debug\BoatClub.exe
 C:\Users\Caroline Forslund\Desktop\OOAD\BoatClub\bin\Debug\BoatClub.pdb
 C:\Users\Caroline Forslund\Desktop\OOAD\BoatClub\obj\Debug\BoatClub.exe
 C:\Users\Caroline Forslund\Desktop\OOAD\BoatClub\obj\Debug\BoatClub.pdb
-C:\Users\Caroline Forslund\Desktop\OOAD\BoatClub\obj\Debug\BoatClub.csprojResolveAssemblyReference.cache

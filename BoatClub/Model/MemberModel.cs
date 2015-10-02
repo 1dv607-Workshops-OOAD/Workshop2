@@ -39,35 +39,5 @@ namespace BoatClub.Model
         {
             return this.memberId;
         }
-        
-
-        //public int generateMemberId()
-        //{
-        //    using (StreamReader reader = new StreamReader(idPath))
-        //    {
-        //        string line = reader.ReadLine();
-        //        if (new FileInfo(idPath).Length == 0)
-        //        {
-        //            this.count = 1;
-        //        }
-        //        else
-        //        {
-        //            this.count = int.Parse(line);
-        //            this.count++;
-        //        }
-
-        //    }
-        //    writeToFile();
-        //    return this.count;
-        //}
-
-        //Save number of generated memberId's to file
-        //public void writeToFile()
-        //{
-        //    using (StreamWriter write = new StreamWriter(idPath, false))
-        //    {
-        //        write.Write(this.count);
-        //    }
-        //}
     }
 }

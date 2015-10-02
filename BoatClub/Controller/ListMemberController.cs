@@ -20,10 +20,10 @@ namespace BoatClub.Controller
         public void listChoice(bool showCompactList)
         {
             ListMemberView listMemberView = new ListMemberView();
-
             if (showCompactList)
             {
-                listMemberView.showCompactList();
+                //listMemberView.showCompactList();
+                
             }
             else
             {

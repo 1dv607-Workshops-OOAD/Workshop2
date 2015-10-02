@@ -1,6 +1,7 @@
 ﻿using BoatClub.Model;
 using BoatClub.View;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,13 +13,15 @@ namespace BoatClub.Controller
     {
         private StartMenuView startView;
         private bool showCompactList = false;
+        private MemberDALModel memberDAL;
 
         public void showSelectedMenu()
         {
 
             //SKAPA ETT MEMBERDAL-OBJEKT OCH SKICKA MED TILL ALLA CONTROLLERS
-            MemberDALModel memberDAL = new MemberDALModel();
+            this.memberDAL = new MemberDALModel();
             ListMemberController listMemberController = new ListMemberController(memberDAL);
+            ListMemberView listMemberView = new ListMemberView();   
 
             StartMenuView.MenuChoice menuChoice = this.startView.GetMenuChoice();
             if (menuChoice == StartMenuView.MenuChoice.AddMember)
@@ -32,8 +35,17 @@ namespace BoatClub.Controller
             {
                 this.showCompactList = true;
                 listMemberController.listChoice(this.showCompactList);
-                //kalla på controllern
-                //show compact list
+                this.memberDAL.setMemberList();
+                //var getMemberList = this.memberDAL.getMemberList();
+                /*foreach (KeyValuePair member in this.memberDAL.setMemberList()){
+                    Console.WriteLine(member);
+                }*/
+                foreach( KeyValuePair<string, string> member in this.memberDAL.getMembersList() )
+                {
+                    Console.WriteLine("Key = {0}, Value = {1}", 
+                        member.Key, member.Value);
+                }
+                
             }
 
             if (menuChoice == StartMenuView.MenuChoice.VerboseListMembers)
