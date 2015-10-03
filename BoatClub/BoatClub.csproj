@@ -41,16 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ListMemberController.cs" />
+    <Compile Include="Controller\MemberController.cs" />
     <Compile Include="Model\MemberIDModel.cs" />
     <Compile Include="Model\MemberDALModel.cs" />
-    <Compile Include="View\ListMemberView.cs" />
+    <Compile Include="View\ListMembersView.cs" />
     <Compile Include="Controller\AddMemberController.cs" />
     <Compile Include="Controller\StartMenuController.cs" />
     <Compile Include="Model\MemberModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\AddMemberView.cs" />
+    <Compile Include="View\MemberView.cs" />
     <Compile Include="View\StartMenuView.cs" />
   </ItemGroup>
   <ItemGroup>

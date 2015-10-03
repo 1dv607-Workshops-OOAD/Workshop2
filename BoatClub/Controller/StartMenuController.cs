@@ -12,16 +12,13 @@ namespace BoatClub.Controller
     class StartMenuController
     {
         private StartMenuView startView;
-        private bool showCompactList = false;
         private MemberDALModel memberDAL;
 
         public void showSelectedMenu()
         {
-
-            //SKAPA ETT MEMBERDAL-OBJEKT OCH SKICKA MED TILL ALLA CONTROLLERS
             this.memberDAL = new MemberDALModel();
-            ListMemberController listMemberController = new ListMemberController(memberDAL);
-            ListMemberView listMemberView = new ListMemberView();   
+            ListMembersView listMembersView = new ListMembersView(this.memberDAL);
+                  
 
             StartMenuView.MenuChoice menuChoice = this.startView.GetMenuChoice();
             if (menuChoice == StartMenuView.MenuChoice.AddMember)
@@ -29,30 +26,24 @@ namespace BoatClub.Controller
                 AddMemberView addMemberView = new AddMemberView();
                 addMemberView.showAddMemberView();
                 AddMemberController addMemberController = new AddMemberController(addMemberView, memberDAL);
-                //this.startView.showAddMemberView();
             }
-            if (menuChoice == StartMenuView.MenuChoice.CompactListMembers)
+            else if (menuChoice == StartMenuView.MenuChoice.CompactListMembers ||
+                menuChoice == StartMenuView.MenuChoice.VerboseListMembers)
             {
-                this.showCompactList = true;
-                listMemberController.listChoice(this.showCompactList);
                 this.memberDAL.setMemberList();
-                //var getMemberList = this.memberDAL.getMemberList();
-                /*foreach (KeyValuePair member in this.memberDAL.setMemberList()){
-                    Console.WriteLine(member);
-                }*/
-                foreach( KeyValuePair<string, string> member in this.memberDAL.getMembersList() )
+                if (menuChoice == StartMenuView.MenuChoice.CompactListMembers)
                 {
-                    Console.WriteLine("Key = {0}, Value = {1}", 
-                        member.Key, member.Value);
+                    listMembersView.showCompactList();
                 }
-                
-            }
+                else
+                {
+                    listMembersView.showVerboseList();
+                }
+                MemberController listMemberController = new MemberController(memberDAL, listMembersView);
 
-            if (menuChoice == StartMenuView.MenuChoice.VerboseListMembers)
-            {
-                listMemberController.listChoice(this.showCompactList);
-                //show verbose list
+                //selectedMember = listMembersView.GetMenuChoice();
             }
+            
         }
 
         public StartMenuController(StartMenuView startView)
