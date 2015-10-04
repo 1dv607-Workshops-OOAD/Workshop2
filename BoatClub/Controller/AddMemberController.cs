@@ -17,6 +17,7 @@ namespace BoatClub.Controller
             this.addMemberView = addMemberView;
             MemberModel member = new MemberModel(addMemberView.getName(), addMemberView.getSocialSecurityNumber());
             memberDAL.saveMember(member);
+            StartMenuController startMenu = new StartMenuController();
         }
     }
 }

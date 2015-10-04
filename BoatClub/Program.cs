@@ -18,12 +18,7 @@ namespace BoatClub
         //Skillnad mot webben.
         static void Main(string[] args)
         {
-            //Register member
-            StartMenuView startView = new StartMenuView();
-            startView.showStartMenu();
-            StartMenuController startController = new StartMenuController(startView);
-
-            startController.showSelectedMenu();
+            StartMenuController startController = new StartMenuController();
         }
     }
 }

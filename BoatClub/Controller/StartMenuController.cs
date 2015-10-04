@@ -14,6 +14,14 @@ namespace BoatClub.Controller
         private StartMenuView startView;
         private MemberDALModel memberDAL;
 
+        public StartMenuController()
+        {
+            this.startView = new StartMenuView();
+            Console.Clear();
+            this.startView.showStartMenu();
+            showSelectedMenu();
+        }
+
         public void showSelectedMenu()
         {
             this.memberDAL = new MemberDALModel();
@@ -44,11 +52,6 @@ namespace BoatClub.Controller
                 //selectedMember = listMembersView.GetMenuChoice();
             }
             
-        }
-
-        public StartMenuController(StartMenuView startView)
-        {
-            this.startView = startView;
         }
     }
 }

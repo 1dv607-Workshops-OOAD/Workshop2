@@ -36,7 +36,7 @@ namespace BoatClub.Model
 
         public void saveMember(MemberModel member)
         {
-            using (StreamWriter write = File.CreateText(folderPath + member.getMemberId() + ".txt"))
+            using (StreamWriter write = File.CreateText(this.folderPath + member.getMemberId() + ".txt"))
             {
                 write.WriteLine("[Namn]");
                 write.WriteLine(member.getName());
@@ -83,6 +83,11 @@ namespace BoatClub.Model
         public List<KeyValuePair<string, string>> getMembersList()
         {
             return this.members;
+        }
+
+        public void deleteMember(string memberId)
+        {
+            File.Delete(this.folderPath + memberId + ".txt");
         }
 
         //public string getMember(string memberId)

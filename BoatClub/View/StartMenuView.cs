@@ -26,7 +26,6 @@ namespace BoatClub.View
 
         public MenuChoice GetMenuChoice()
         {
-            
             char menuChoice = System.Console.ReadKey().KeyChar;
             if (menuChoice == '1')
             {

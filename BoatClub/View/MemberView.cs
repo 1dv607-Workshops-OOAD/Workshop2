@@ -49,7 +49,12 @@ namespace BoatClub.View
         {
             char menuChoice = System.Console.ReadKey().KeyChar;
 
-            return menuChoice;
+            return Char.ToUpper(menuChoice);
+        }
+
+        public string getSelectedMember()
+        {
+            return this.selectedMember;
         }
     }
 }

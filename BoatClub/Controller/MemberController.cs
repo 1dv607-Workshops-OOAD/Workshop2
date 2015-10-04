@@ -12,7 +12,9 @@ namespace BoatClub.Controller
     {
         private MemberDALModel memberDAL;
         private ListMembersView listMembersView;
+        private MemberView memberView;
         private string selectedMember;
+        private char menuChoice;
         
         public MemberController(MemberDALModel memberDAL, ListMembersView listMembersView)
         {
@@ -21,13 +23,21 @@ namespace BoatClub.Controller
 
             this.selectedMember = this.listMembersView.GetMenuChoice();
 
-            MemberView memberView = new MemberView(this.memberDAL, this.selectedMember);
+            this.memberView = new MemberView(this.memberDAL, this.selectedMember);
+            this.menuChoice = memberView.GetMenuChoice();
+            editMember();
+        }
 
-            //MemberModel member = new MemberModel(name, socialSecurityNumber);
+        public void editMember()
+        {
+            if (this.menuChoice == 'R')
+            {
 
-            //int memberId = (int)this.listMemberView.GetMenuChoice();
-            //listMemberController.listChoice(this.showCompactList);
-
+            }
+            if (this.menuChoice == 'T')
+            {
+                this.memberDAL.deleteMember(this.memberView.getSelectedMember());
+            }
         }
     }
 }
