@@ -35,6 +35,16 @@ namespace BoatClub.Controller
         {
             Console.Clear();
             Console.WriteLine("Utökad medlemslista");
+            Console.WriteLine("Ange medlemsnummer för att redigera en medlem och hantera dess båt(ar).");
+            foreach (KeyValuePair<string, string> member in this.memberDAL.getMembersList())
+            {
+                if (member.Key == this.memberDAL.getMemberIdKey())
+                {
+                    Console.WriteLine();
+                }
+                Console.WriteLine("{0}: {1}",
+                    member.Key, member.Value);
+            }
         }
 
         public string GetMenuChoice()

@@ -12,6 +12,7 @@ namespace BoatClub.View
             AddMember,
             CompactListMembers,
             VerboseListMembers,
+            AddBoat,
             None
         }
 
@@ -20,8 +21,9 @@ namespace BoatClub.View
             Console.WriteLine("Välkommen till båtklubben!");
             Console.WriteLine("Välj nedan vad du vill göra.");
             Console.WriteLine("Tryck 1 för att lägga till medlem.");
-            Console.WriteLine("Tryck 2 för att visa medlemslista");
-            Console.WriteLine("Tryck 3 för att visa utökad medlemslista");
+            Console.WriteLine("Tryck 2 för att visa medlemslista."); //med antal båtar
+            Console.WriteLine("Tryck 3 för att visa utökad medlemslista."); //med båtinfo
+            Console.WriteLine("Tryck 4 för att lägga till en båt.");
         }
 
         public MenuChoice GetMenuChoice()
@@ -35,7 +37,7 @@ namespace BoatClub.View
             {
                 return MenuChoice.CompactListMembers;
             }
-            if (menuChoice == '3')
+            if (menuChoice == '3' || menuChoice == '4')
             {
                 return MenuChoice.VerboseListMembers;
             }

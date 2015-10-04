@@ -31,6 +31,7 @@ namespace BoatClub.View
            
             Console.WriteLine("Ange R för att redigera medlem.");
             Console.WriteLine("Ange T för att ta bort medlem.");
+            Console.WriteLine("Ange B för att lägga till en båt.");
 
             Console.WriteLine("Vald medlem:");
             foreach (KeyValuePair<string, string> member in this.memberDAL.getMembersList())

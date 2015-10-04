@@ -10,10 +10,17 @@ namespace BoatClub.View
     {
         private string name;
         private string socialSecurityNumber;
+
+        public AddMemberView()
+        {
+            //showAddMemberView();
+        }
+
         public void showAddMemberView()
         {
             Console.Clear();
             Console.WriteLine("Lägg till medlem");
+
             Console.Write("Ange namn: ");
             this.name = Console.ReadLine();
             Console.Write("Ange personnummer: ");
@@ -28,11 +35,6 @@ namespace BoatClub.View
         public string getSocialSecurityNumber()
         {
             return this.socialSecurityNumber;
-        }
-
-        public AddMemberView()
-        {
-            //showAddMemberView();
         }
     }
 }

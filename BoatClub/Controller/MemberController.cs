@@ -36,7 +36,15 @@ namespace BoatClub.Controller
             }
             if (this.menuChoice == 'T')
             {
-                this.memberDAL.deleteMember(this.memberView.getSelectedMember());
+                this.memberDAL.deleteMember(this.selectedMember);
+            }
+            if (this.menuChoice == 'B')
+            {
+                //skapa boatview och gå till den
+                AddBoatView addBoatView = new AddBoatView();
+                BoatModel boat = new BoatModel(addBoatView.getBoatType(), 
+                    addBoatView.getBoatLength());
+                this.memberDAL.saveBoat(this.selectedMember, boat);
             }
         }
     }
