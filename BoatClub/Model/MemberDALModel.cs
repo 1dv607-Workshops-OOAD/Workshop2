@@ -56,6 +56,7 @@ namespace BoatClub.Model
                 write.WriteLine(this.SectionSocialSecurityNumber);
                 write.WriteLine(member.getSocialSecurityNumber());
                 write.WriteLine(this.SectionBoats);
+
             }
         }
 
@@ -67,10 +68,7 @@ namespace BoatClub.Model
             {
                 string name = "";
                 string socialSecurityNumber = "";
-                //string boatType = "";
-                //string boatLength = "";
                 List<String> boats = new List<String>();
-                //List<KeyValuePair<string, string>> boats = new List<KeyValuePair<string, string>>();
                 string memberId = Path.GetFileNameWithoutExtension(this.folderPath + file);
            
                 using (StreamReader read = new StreamReader(this.folderPath + file))
@@ -89,13 +87,10 @@ namespace BoatClub.Model
                                 socialSecurityNumber = read.ReadLine();
                             }
                             if (line == SectionBoats)
-                                //if (line == SectionBoats || (line != SectionName && line != SectionSocialSecurityNumber))
                             {
-                                //read.ReadLine();
                                 for (int i = 0; i < (file.Length - lineCount); i++)
                                 {
-                                    //if ((line = read.ReadLine()) != null)
-                                    if (line != null)
+                                    if (!read.EndOfStream)
                                     {
                                         boats.Add(read.ReadLine());
                                         lineCount++;
@@ -105,56 +100,24 @@ namespace BoatClub.Model
                                         break;
                                     }
                                 }
-                                    
-                                //continue;
-
-                                //string nextLine = read.ReadLine();
-                                //Console.WriteLine("section boats");
-                                ////Console.WriteLine(nextLine);
-                                ////do
-                                ////{
-
-                                //    boatType = read.ReadLine();
-                                //    //this.members.Add(new KeyValuePair<string, string>(this.boatTypeKey, boatType));
-                                //    boatLength = read.ReadLine();
-                                //    //this.members.Add(new KeyValuePair<string, string>(this.boatLengthKey, boatLength));
-
-                                //    //boats.Add(new KeyValuePair<string, string>(this.boatTypeKey, boatType));
-                                //    //boats.Add(new KeyValuePair<string, string>(this.boatLengthKey, boatLength));
-                                //    boats.Add(boatType);
-                                //    boats.Add(boatLength);
-                                //    //Console.WriteLine(boats.ToString());
-
-                                ////} while (nextLine != null);
                             }
-                            //else
-                            //{
-                            //boats.Add(read.ReadLine());
-                            //}
                             lineCount++;
-                        }
-                        
+                        }                        
                     }
                 }
                 this.members.Add(new KeyValuePair<string, string>(this.memberIdKey, memberId));
                 this.members.Add(new KeyValuePair<string, string>(this.nameKey, name));
                 this.members.Add(new KeyValuePair<string, string>(this.socialSecurityNumberKey, socialSecurityNumber));
 
-                Console.WriteLine("test1");
-
-
                 for (int i = 0; i < boats.Count; i++)
                 {
-                    Console.WriteLine("test2");
                     if((i+1) % 2 != 0)
                     {
                         this.members.Add(new KeyValuePair<string, string>(this.boatTypeKey, boats[i]));
-                        Console.WriteLine("Jämn");
                     }
                     else
                     {
                         this.members.Add(new KeyValuePair<string, string>(this.boatLengthKey, boats[i]));
-                        Console.WriteLine("Ojämn");
                     }
                 }
                 boats = null;
@@ -163,6 +126,7 @@ namespace BoatClub.Model
 
         public List<KeyValuePair<string, string>> getMembersList()
         {
+            setMemberList();
             return this.members;
         }
 

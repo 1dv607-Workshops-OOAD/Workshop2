@@ -1,0 +1,7 @@
+[Namn]
+Lisa
+[Personnummer]
+12345
+[Båtar]
+Sailboat
+2

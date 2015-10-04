@@ -15,13 +15,10 @@ namespace BoatClub.View
         private string name;
         private string socialSecurityNumber;
 
-        public MemberView(MemberDALModel memberDAL, string selectedMember)
+        public MemberView(string selectedMember)
         {
-            this.memberDAL = memberDAL;
+            this.memberDAL = new MemberDALModel();
             this.selectedMember = selectedMember;
-
-            this.members = this.memberDAL.getMembersList();
-            this.showMember();
         }
         public void showMember()
         {
@@ -54,7 +51,6 @@ namespace BoatClub.View
             }
         }
 
-        //FORTSÄTT HÄR - Radera eller redigera en medlem beroende på menyval
         public char GetMenuChoice()
         {
             char menuChoice = System.Console.ReadKey().KeyChar;
@@ -82,7 +78,6 @@ namespace BoatClub.View
             {
                 socialSecurityNumber = this.socialSecurityNumber;
             }
-            //Console.WriteLine(name + " " + socialSecurityNumber);
             this.memberDAL.saveEditedMember(this.selectedMember, name, socialSecurityNumber);
         }
     }

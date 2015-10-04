@@ -48,8 +48,6 @@ namespace BoatClub.Controller
                     listMembersView.showVerboseList();
                 }
                 MemberController listMemberController = new MemberController(memberDAL, listMembersView);
-
-                //selectedMember = listMembersView.GetMenuChoice();
             }
             
         }

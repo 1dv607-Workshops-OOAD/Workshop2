@@ -1,5 +1,0 @@
-﻿[Namn]
-Lisa
-[Personnummer]
-1234567
-[Båtar]

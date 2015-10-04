@@ -12,6 +12,7 @@ namespace BoatClub.Model
         private string socialSecurityNumber;
         private string name;
         private int memberId;
+        //private int numberOfBoats;
         private string idPath = "../../AppData/memberID.txt";
         private int count;
         //private MemberIDModel memberIdModel;

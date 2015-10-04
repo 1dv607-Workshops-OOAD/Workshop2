@@ -1,5 +1,0 @@
-﻿[Namn]
-Carro
-[Personnummer]
-980
-[Båtar]

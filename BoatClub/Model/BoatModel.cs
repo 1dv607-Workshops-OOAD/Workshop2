@@ -8,8 +8,6 @@ namespace BoatClub.Model
 {
     class BoatModel
     {
-        //private int boatId;
-        //private string memberId;
         private string boatLength;
         private string boatType;
         public enum BoatType
@@ -23,7 +21,6 @@ namespace BoatClub.Model
 
         public BoatModel(string boatType, string boatLength)
         {
-            //this.memberId = memberId;
             this.boatLength = boatLength;
             this.boatType = boatType;
         }

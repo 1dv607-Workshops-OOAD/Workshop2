@@ -23,7 +23,8 @@ namespace BoatClub.Controller
 
             this.selectedMember = this.listMembersView.GetMenuChoice();
 
-            this.memberView = new MemberView(this.memberDAL, this.selectedMember);
+            this.memberView = new MemberView(this.selectedMember);
+            this.memberView.showMember();
             this.menuChoice = memberView.GetMenuChoice();
             editMember();
         }
@@ -40,11 +41,12 @@ namespace BoatClub.Controller
             }
             if (this.menuChoice == 'B')
             {
-                //skapa boatview och gå till den
                 AddBoatView addBoatView = new AddBoatView();
                 BoatModel boat = new BoatModel(addBoatView.getBoatType(), 
                     addBoatView.getBoatLength());
                 this.memberDAL.saveBoat(this.selectedMember, boat);
+                MemberView editedMemberView = new MemberView(this.selectedMember);
+                editedMemberView.showMember();
             }
         }
     }
