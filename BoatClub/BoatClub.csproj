@@ -44,6 +44,7 @@
     <Compile Include="Controller\MemberController.cs" />
     <Compile Include="Model\MemberIDModel.cs" />
     <Compile Include="Model\MemberDALModel.cs" />
+    <Compile Include="View\EditMemberView.cs" />
     <Compile Include="View\ListMembersView.cs" />
     <Compile Include="Controller\AddMemberController.cs" />
     <Compile Include="Controller\StartMenuController.cs" />

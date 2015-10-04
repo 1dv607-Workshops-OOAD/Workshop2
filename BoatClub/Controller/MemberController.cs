@@ -32,7 +32,7 @@ namespace BoatClub.Controller
         {
             if (this.menuChoice == 'R')
             {
-
+                this.memberView.editMember();
             }
             if (this.menuChoice == 'T')
             {

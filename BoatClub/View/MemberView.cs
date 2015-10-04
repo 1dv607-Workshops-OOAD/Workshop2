@@ -12,6 +12,8 @@ namespace BoatClub.View
         private MemberDALModel memberDAL;
         private string selectedMember;
         private List<KeyValuePair<string, string>> members = new List<KeyValuePair<string, string>>();
+        private string name;
+        private string socialSecurityNumber;
 
         public MemberView(MemberDALModel memberDAL, string selectedMember)
         {
@@ -40,6 +42,13 @@ namespace BoatClub.View
                 if (counter == int.Parse(this.selectedMember))
                 {
                     Console.WriteLine("{0}: {1}", member.Key, member.Value);
+                    if (member.Key == this.memberDAL.getNameKey()){
+                        this.name = member.Value;
+                    }
+                    if (member.Key == this.memberDAL.getSocialSecurityNumberKey())
+                    {
+                        this.socialSecurityNumber = member.Value;
+                    }
                 }
             }
         }
@@ -55,6 +64,25 @@ namespace BoatClub.View
         public string getSelectedMember()
         {
             return this.selectedMember;
+        }
+
+        public void editMember()
+        {
+            Console.WriteLine("\nFyll i de fält du vill redigera. \nTryck enter för att gå vidare till nästa fält. \nLämna tomt om du inte vill redigera det markerade fältet.");
+            Console.Write("Namn: ");
+            string name = Console.ReadLine();
+            Console.Write("Personummer: ");
+            string socialSecurityNumber = Console.ReadLine();
+            if (name == "")
+            {
+                name = this.name;
+            }
+            if (socialSecurityNumber == "")
+            {
+                socialSecurityNumber = this.socialSecurityNumber;
+            }
+            //Console.WriteLine(name + " " + socialSecurityNumber);
+            this.memberDAL.saveEditedMember(this.selectedMember, name, socialSecurityNumber);
         }
     }
 }

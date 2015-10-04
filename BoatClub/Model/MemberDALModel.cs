@@ -26,6 +26,16 @@ namespace BoatClub.Model
             return this.memberIdKey;
         }
 
+        public string getNameKey()
+        {
+            return this.nameKey;
+        }
+
+        public string getSocialSecurityNumberKey()
+        {
+            return this.socialSecurityNumberKey;
+        }
+
         public FileInfo[] getFiles()
         {
             DirectoryInfo directory = new DirectoryInfo(folderPath);
@@ -60,7 +70,6 @@ namespace BoatClub.Model
                 {
                     while ((line = read.ReadLine()) != null)
                     {
-                        //lägg till namn
                         if (!string.IsNullOrWhiteSpace(line))
                         {
                             if (line == SectionName)
@@ -83,6 +92,19 @@ namespace BoatClub.Model
         public List<KeyValuePair<string, string>> getMembersList()
         {
             return this.members;
+        }
+
+        public void saveEditedMember(string memberId, string name, string socialSecurityNumber)
+        {
+            using (StreamWriter write = File.CreateText(this.folderPath + memberId + ".txt"))
+            {
+                write.WriteLine("[Namn]");
+                write.WriteLine(name);
+                write.WriteLine("[Personnummer]");
+                write.WriteLine(socialSecurityNumber);
+                write.WriteLine("[Båtar]");
+            }
+                //File.Open(this.folderPath + memberId + ".txt");
         }
 
         public void deleteMember(string memberId)
