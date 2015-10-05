@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace BoatClub.View
 {
-    class EditMemberView
+    class EditBoatView
     {
+        //Visa en medlems båtar
+
+        public EditBoatView()
+        {
+
+        }
     }
 }

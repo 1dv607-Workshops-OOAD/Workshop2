@@ -45,8 +45,7 @@ namespace BoatClub.Controller
                 BoatModel boat = new BoatModel(addBoatView.getBoatType(), 
                     addBoatView.getBoatLength());
                 this.memberDAL.saveBoat(this.selectedMember, boat);
-                MemberView editedMemberView = new MemberView(this.selectedMember);
-                editedMemberView.showMember();
+                this.memberView.showMember();
             }
         }
     }

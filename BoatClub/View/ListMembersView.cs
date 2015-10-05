@@ -10,9 +10,9 @@ namespace BoatClub.Controller
     {
         private MemberDALModel memberDAL;
 
-        public ListMembersView(MemberDALModel memberDAL)
+        public ListMembersView()
         {
-            this.memberDAL = memberDAL;
+            this.memberDAL = new MemberDALModel();
         }
 
         public void showCompactList()

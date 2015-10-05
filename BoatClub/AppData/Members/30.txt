@@ -5,3 +5,5 @@ Lisa
 [Båtar]
 Sailboat
 2
+KayakOrCanoe
+3

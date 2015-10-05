@@ -155,5 +155,10 @@ namespace BoatClub.Model
                 write.WriteLine(boat.getBoatLength());
             }
         }
+
+        public void deleteBoat()
+        {
+
+        }
     }
 }

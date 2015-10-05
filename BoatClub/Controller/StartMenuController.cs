@@ -25,7 +25,7 @@ namespace BoatClub.Controller
         public void showSelectedMenu()
         {
             this.memberDAL = new MemberDALModel();
-            ListMembersView listMembersView = new ListMembersView(this.memberDAL);
+            ListMembersView listMembersView = new ListMembersView();
                   
 
             StartMenuView.MenuChoice menuChoice = this.startView.GetMenuChoice();
@@ -38,7 +38,6 @@ namespace BoatClub.Controller
             else if (menuChoice == StartMenuView.MenuChoice.CompactListMembers ||
                 menuChoice == StartMenuView.MenuChoice.VerboseListMembers)
             {
-                this.memberDAL.setMemberList();
                 if (menuChoice == StartMenuView.MenuChoice.CompactListMembers)
                 {
                     listMembersView.showCompactList();
