@@ -13,6 +13,8 @@ namespace BoatClub.View
         private string boatLength;
         private MemberDALModel memberDAL;
         private string selectedMember;
+        private string editMenuChoice;
+        char menuChoice;
 
         public enum MenuChoice
         {
@@ -58,40 +60,48 @@ namespace BoatClub.View
         public void showBoatMenu()
         {
             Console.Clear();
-            Console.WriteLine("Ange 1 för att lägg till en båt.");
-            Console.WriteLine("Ange 2 för att redigera båt.");
-            Console.WriteLine("Ange 3 för att ta bort båt.");
-            Console.WriteLine("Ange 4 för att gå tillbaka till startmenyn.");
+            Console.WriteLine("Ange L för att lägg till en båt.");
+            Console.WriteLine("Ange R för att redigera båt.");
+            Console.WriteLine("Ange T för att ta bort båt.");
+            Console.WriteLine("Ange S för att gå tillbaka till startmenyn.");
         }
 
         public MenuChoice GetMenuChoice()
         {
-            char menuChoice = System.Console.ReadKey().KeyChar;
-            if (menuChoice == '1')
+            this.menuChoice = System.Console.ReadKey().KeyChar;
+            //Char.ToUpper(menuChoice);
+
+            if (menuChoice == 'L')
             {
+                Console.WriteLine("L");
                 return MenuChoice.AddBoat;
             }
-            if (menuChoice == '2')
+            if (menuChoice == 'R')
             {
                 return MenuChoice.EditBoat;
             }
-            if (menuChoice == '3')
+            if (menuChoice == 'T')
             {
                 return MenuChoice.DeleteBoat;
             }
-            if (menuChoice == '4')
+            if (menuChoice == 'S')
             {
                 return MenuChoice.StartMenu;
             }
-
+            Console.WriteLine("GetMenuChoice");
             return MenuChoice.None;
+        }
+
+        public string getEditMenuChoice()
+        {
+            return this.editMenuChoice;
         }
 
         public void listMemberBoats()
         {
             int counter = 0;
+            int boatCount = 0;
 
-            Console.WriteLine("Testar " + this.selectedMember);
             Console.WriteLine("Båtar:");
             foreach (KeyValuePair<string, string> member in this.memberDAL.getMembersList())
             {
@@ -101,12 +111,22 @@ namespace BoatClub.View
                 }
                 if (counter == int.Parse(this.selectedMember))
                 {
-                    if (member.Key == this.memberDAL.getBoatTypeKey() || member.Key == this.memberDAL.getBoatLengthKey())
+                    if (member.Key == this.memberDAL.getBoatTypeKey() || 
+                        member.Key == this.memberDAL.getBoatLengthKey())
                     {
-                        Console.WriteLine("{0}: {1}", member.Key, member.Value);
+                        if (member.Key == this.memberDAL.getBoatTypeKey())
+                        {
+                            boatCount++;
+                            Console.WriteLine("{0}: {1} (Nr: {2})", member.Key, member.Value, boatCount);
+                        }
+                        else
+                        {
+                            Console.WriteLine("{0}: {1}", member.Key, member.Value);
+                        }
                     }
                 }
             }
+            this.menuChoice = Console.ReadKey().KeyChar;
         }
 
         //public void saveBoat()

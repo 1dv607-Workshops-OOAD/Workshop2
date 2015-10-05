@@ -31,19 +31,19 @@ namespace BoatClub.Controller
 
         public void editMember()
         {
-            if (this.menuChoice == '1')
+            if (this.menuChoice == 'R')
             {
                 this.memberView.editMember();
             }
-            if (this.menuChoice == '2')
+            if (this.menuChoice == 'T')
             {
                 this.memberDAL.deleteMember(this.selectedMember);
             }
-            if (this.menuChoice == '3')
+            if (this.menuChoice == 'H')
             {
                 BoatController boatController = new BoatController(this.selectedMember, this.memberView);
             }
-            if (this.menuChoice == '4')
+            if (this.menuChoice == 'S')
             {
                 StartMenuController startController = new StartMenuController();
             }

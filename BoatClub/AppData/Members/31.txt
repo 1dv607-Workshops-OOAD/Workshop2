@@ -1,7 +1,7 @@
-﻿[Namn]
+[Namn]
 Johanna
 [Personnummer]
 1236
 [Båtar]
-Sailboat
-2
+Segelbåt
+12

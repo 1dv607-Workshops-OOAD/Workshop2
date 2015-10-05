@@ -166,7 +166,7 @@ namespace BoatClub.Model
             }
         }
 
-        public void deleteBoat()
+        public void deleteBoat(string selectedBoat)
         {
 
         }

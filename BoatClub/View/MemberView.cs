@@ -26,10 +26,10 @@ namespace BoatClub.View
 
             Console.Clear();
            
-            Console.WriteLine("Ange 1 för att redigera medlem.");
-            Console.WriteLine("Ange 2 för att ta bort medlem.");
-            Console.WriteLine("Ange 3 för att hantera medlemmens båt(ar).");
-            Console.WriteLine("Ange 4 för att gå tillbaka till startmenyn.");
+            Console.WriteLine("Ange R för att redigera medlem.");
+            Console.WriteLine("Ange T för att ta bort medlem.");
+            Console.WriteLine("Ange H för att hantera medlemmens båt(ar).");
+            Console.WriteLine("Ange S för att gå tillbaka till startmenyn.");
 
             Console.WriteLine("Vald medlem:");
             foreach (KeyValuePair<string, string> member in this.memberDAL.getMembersList())

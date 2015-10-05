@@ -12,10 +12,10 @@ namespace BoatClub.Model
         private string boatType;
         public enum BoatType
         {
-            Sailboat,
-            KayakOrCanoe,
-            Motorsailer,
-            Other,
+            Segelbåt,
+            Kajak,
+            Motorseglare,
+            Annan,
             None
         }
 
@@ -29,19 +29,19 @@ namespace BoatClub.Model
         {
             if (this.boatType == "1")
             {
-                return BoatType.Sailboat;
+                return BoatType.Segelbåt;
             }
             if (this.boatType == "2")
             {
-                return BoatType.KayakOrCanoe;
+                return BoatType.Kajak;
             }
             if (this.boatType == "3")
             {
-                return BoatType.Motorsailer;
+                return BoatType.Motorseglare;
             }
             if (this.boatType == "4")
             {
-                return BoatType.Other;
+                return BoatType.Annan;
             }
             return BoatType.None;
         }

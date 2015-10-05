@@ -21,7 +21,6 @@ namespace BoatClub.Controller
             this.boatView = new BoatView(this.selectedMember);
             this.memberDAL = new MemberDALModel();
             this.memberView = memberView;
-            Console.WriteLine("Vald medlems id-nummer" + this.selectedMember);
             showSelectedMenu();
             
            
@@ -29,10 +28,13 @@ namespace BoatClub.Controller
 
         public void showSelectedMenu()
         {
+            Console.WriteLine("ShowSelectedMenu i BoatController");
             BoatView.MenuChoice menuChoice = this.boatView.GetMenuChoice();
+            
 
             if (menuChoice == BoatView.MenuChoice.AddBoat)
             {
+                Console.WriteLine("Add boat");
                 this.boatView.addBoat();
                 BoatModel boat = new BoatModel(boatView.getBoatType(), boatView.getBoatLength());
                 this.memberDAL.saveBoat(this.selectedMember, boat);
@@ -41,7 +43,7 @@ namespace BoatClub.Controller
             }
             if (menuChoice == BoatView.MenuChoice.EditBoat)
             {
-                
+                this.boatView.listMemberBoats();
             }
             if (menuChoice == BoatView.MenuChoice.DeleteBoat)
             {
@@ -54,5 +56,38 @@ namespace BoatClub.Controller
 
 
         }
+        //public void showSelectedMenu()
+        //{
+        //    BoatView.MenuChoice menuChoice = this.boatView.GetMenuChoice();
+
+        //    if (menuChoice == BoatView.MenuChoice.AddBoat)
+        //    {
+        //        this.boatView.addBoat();
+        //        BoatModel boat = new BoatModel(boatView.getBoatType(), boatView.getBoatLength());
+        //        this.memberDAL.saveBoat(this.selectedMember, boat);
+        //        MemberView editedMemberView = new MemberView(this.selectedMember);
+        //        editedMemberView.showMember();
+        //    }
+        //    if (menuChoice == BoatView.MenuChoice.EditBoat || menuChoice == BoatView.MenuChoice.DeleteBoat)
+        //    {
+        //        Console.WriteLine("Edit eller delete");
+        //        this.boatView.listMemberBoats();
+        //        string selectedBoat = "";
+
+        //        if (menuChoice == BoatView.MenuChoice.DeleteBoat)
+        //        {
+        //            Console.WriteLine("Delete båt");
+        //            selectedBoat = this.boatView.getEditMenuChoice();
+        //            this.memberDAL.deleteBoat(selectedBoat);
+        //        }
+        //    }
+
+        //    if (menuChoice == BoatView.MenuChoice.StartMenu)
+        //    {
+        //        StartMenuController startController = new StartMenuController();
+        //    }
+
+
+        //}
     }
 }
