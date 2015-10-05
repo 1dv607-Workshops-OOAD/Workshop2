@@ -34,6 +34,16 @@ namespace BoatClub.Model
             return this.nameKey;
         }
 
+        public string getBoatTypeKey()
+        {
+            return this.boatTypeKey;
+        }
+
+        public string getBoatLengthKey()
+        {
+            return this.boatLengthKey;
+        }
+
         public string getSocialSecurityNumberKey()
         {
             return this.socialSecurityNumberKey;

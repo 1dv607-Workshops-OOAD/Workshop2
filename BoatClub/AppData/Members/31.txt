@@ -1,11 +1,7 @@
 ﻿[Namn]
-Carro
+Johanna
 [Personnummer]
-1244
+1236
 [Båtar]
 Sailboat
-3
-KayakOrCanoe
-2
-Motorsailer
 2

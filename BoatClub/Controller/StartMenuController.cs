@@ -46,7 +46,7 @@ namespace BoatClub.Controller
                 {
                     listMembersView.showVerboseList();
                 }
-                MemberController listMemberController = new MemberController(memberDAL, listMembersView);
+                MemberController listMemberController = new MemberController(listMembersView);
             }
             
         }

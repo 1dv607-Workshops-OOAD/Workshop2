@@ -7,3 +7,5 @@ Sailboat
 2
 KayakOrCanoe
 3
+Motorsailer
+4

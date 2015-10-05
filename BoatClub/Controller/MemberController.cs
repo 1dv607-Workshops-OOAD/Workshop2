@@ -16,9 +16,9 @@ namespace BoatClub.Controller
         private string selectedMember;
         private char menuChoice;
         
-        public MemberController(MemberDALModel memberDAL, ListMembersView listMembersView)
+        public MemberController(ListMembersView listMembersView)
         {
-            this.memberDAL = memberDAL;
+            this.memberDAL = new MemberDALModel();
             this.listMembersView = listMembersView;
 
             this.selectedMember = this.listMembersView.GetMenuChoice();
@@ -31,21 +31,21 @@ namespace BoatClub.Controller
 
         public void editMember()
         {
-            if (this.menuChoice == 'R')
+            if (this.menuChoice == '1')
             {
                 this.memberView.editMember();
             }
-            if (this.menuChoice == 'T')
+            if (this.menuChoice == '2')
             {
                 this.memberDAL.deleteMember(this.selectedMember);
             }
-            if (this.menuChoice == 'B')
+            if (this.menuChoice == '3')
             {
-                AddBoatView addBoatView = new AddBoatView();
-                BoatModel boat = new BoatModel(addBoatView.getBoatType(), 
-                    addBoatView.getBoatLength());
-                this.memberDAL.saveBoat(this.selectedMember, boat);
-                this.memberView.showMember();
+                BoatController boatController = new BoatController(this.selectedMember, this.memberView);
+            }
+            if (this.menuChoice == '4')
+            {
+                StartMenuController startController = new StartMenuController();
             }
         }
     }
